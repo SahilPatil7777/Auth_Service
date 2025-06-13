@@ -4,7 +4,9 @@ const UserController = require("../../controllers/user-controller");
 
 const router = express.Router();
 router.post("/signup", UserController.create);
-
 router.delete("/delete/:userId", UserController.destroy);
+
+router.post("/signin", UserController.signIn);
+
 
 module.exports = router;
