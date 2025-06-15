@@ -17,11 +17,11 @@ const create = async (req, res) => {
     });
   } catch (error) {
     console.log("Something went wrong in the controller layer");
-    return res.status(500).json({
+    return res.status(error.statusCode).json({
       data: {},
       success: false,
-      message: "Not able to create a new user",
-      err: error,
+      message: error.message,
+      err: error.explanation,
     });
   }
 };
